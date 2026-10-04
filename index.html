@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda de Citas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="panel">
+      <h1>Agenda de Citas</h1>
+
+      <form id="formCita">
+        <input type="hidden" id="idCita" />
+
+        <label>
+          Nombre
+          <input type="text" id="nombre" placeholder="Nombre del cliente" required />
+        </label>
+
+        <label>
+          Teléfono
+          <input type="tel" id="telefono" placeholder="Número de contacto" />
+        </label>
+
+        <label>
+          Servicio
+          <input type="text" id="servicio" placeholder="Ej. Corte, limpieza..." required />
+        </label>
+
+        <label>
+          Fecha
+          <input type="date" id="fecha" required />
+        </label>
+
+        <label>
+          Hora
+          <input type="time" id="hora" required />
+        </label>
+
+        <label>
+          Estado
+          <select id="estado">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Completada">Completada</option>
+          </select>
+        </label>
+
+        <label>
+          Notas
+          <textarea id="notas" placeholder="Detalles adicionales"></textarea>
+        </label>
+
+        <button type="submit" id="btnGuardar">Guardar cita</button>
+        <button type="button" id="btnCancelar" class="secondary hidden">Cancelar edición</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Citas registradas</h2>
+
+      <input
+        type="text"
+        id="buscar"
+        class="search"
+        placeholder="Buscar por nombre o servicio"
+      />
+
+      <div id="listaCitas"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
